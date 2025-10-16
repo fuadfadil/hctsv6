@@ -8,6 +8,41 @@
       "when": 1759524404334,
       "tag": "0000_dry_bishop",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1760635982255,
+      "tag": "0001_famous_ben_parker",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1760636102985,
+      "tag": "0002_chemical_shinobi_shaw",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1760639073273,
+      "tag": "0003_magenta_archangel",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1760640073883,
+      "tag": "0004_dashing_wrecker",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1760641406246,
+      "tag": "0005_complete_korath",
+      "breakpoints": true
     }
   ]
 }

@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Agentic Coding Boilerplate",
+  title: "HCTS - Healthcare Trading System",
   description:
-    "Complete agentic coding boilerplate with authentication, database, AI integration, and modern tooling - perfect for building AI-powered applications and autonomous agents by Leon van Zyl",
+    "Connect healthcare providers with pharmaceutical companies through our secure, compliant marketplace for medical supplies and services trading. Healthcare Trading System platform.",
 };
 
 export default function RootLayout({

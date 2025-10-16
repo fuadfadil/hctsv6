@@ -1,174 +1,145 @@
-"use client";
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SetupChecklist } from "@/components/setup-checklist";
-import { useDiagnostics } from "@/hooks/use-diagnostics";
-import { StarterPromptModal } from "@/components/starter-prompt-modal";
-import { Video, Shield, Database, Palette, Bot } from "lucide-react";
+import { Stethoscope, Users, BarChart3, Shield, Heart, TrendingUp } from "lucide-react";
 
 export default function Home() {
-  const { isAuthReady, isAiReady, loading } = useDiagnostics();
   return (
-    <main className="flex-1 container mx-auto px-4 py-12">
-      <div className="max-w-4xl mx-auto text-center space-y-8">
-        <div className="space-y-4">
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10">
-              <Bot className="h-7 w-7 text-primary" />
-            </div>
-            <h1 className="text-5xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">
-              Starter Kit
-            </h1>
-          </div>
-          <h2 className="text-2xl font-semibold text-muted-foreground">
-            Complete Boilerplate for AI Applications
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            A complete agentic coding boilerplate with authentication, database, AI
-            integration, and modern tooling for building AI-powered applications
-          </p>
-        </div>
-
-        {/* YouTube Tutorial Video */}
-        <div className="space-y-4">
-          <h3 className="text-2xl font-semibold flex items-center justify-center gap-2">
-            <Video className="h-6 w-6" />
-            Video Tutorial
-          </h3>
-          <p className="text-muted-foreground">
-            Watch the complete walkthrough of this agentic coding boilerplate:
-          </p>
-          <div className="relative w-full max-w-3xl mx-auto">
-            <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg border">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/T0zFZsr_d0Q"
-                title="Agentic Coding Boilerplate Tutorial"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          <div className="p-6 border rounded-lg">
-            <h3 className="font-semibold mb-2 flex items-center gap-2">
-              <Shield className="h-4 w-4" />
-              Authentication
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Better Auth with Google OAuth integration
-            </p>
-          </div>
-          <div className="p-6 border rounded-lg">
-            <h3 className="font-semibold mb-2 flex items-center gap-2">
-              <Database className="h-4 w-4" />
-              Database
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Drizzle ORM with PostgreSQL setup
-            </p>
-          </div>
-          <div className="p-6 border rounded-lg">
-            <h3 className="font-semibold mb-2 flex items-center gap-2">
-              <Bot className="h-4 w-4" />
-              AI Ready
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Vercel AI SDK with OpenAI integration
-            </p>
-          </div>
-          <div className="p-6 border rounded-lg">
-            <h3 className="font-semibold mb-2 flex items-center gap-2">
-              <Palette className="h-4 w-4" />
-              UI Components
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              shadcn/ui with Tailwind CSS
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-6 mt-12">
-          <SetupChecklist />
-
-          <h3 className="text-2xl font-semibold">Next Steps</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-medium mb-2">
-                1. Set up environment variables
-              </h4>
-              <p className="text-sm text-muted-foreground mb-2">
-                Copy <code>.env.example</code> to <code>.env.local</code> and
-                configure:
+    <main className="flex-1">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="space-y-4">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10">
+                  <Stethoscope className="h-8 w-8 text-primary" />
+                </div>
+                <h1 className="text-6xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">
+                  HCTS
+                </h1>
+              </div>
+              <h2 className="text-3xl font-semibold text-muted-foreground">
+                Healthcare Trading System
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Connect healthcare providers with pharmaceutical companies through our secure,
+                compliant marketplace for medical supplies and services trading.
               </p>
-              <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                <li>POSTGRES_URL (PostgreSQL connection string)</li>
-                <li>GOOGLE_CLIENT_ID (OAuth credentials)</li>
-                <li>GOOGLE_CLIENT_SECRET (OAuth credentials)</li>
-                <li>OPENAI_API_KEY (for AI functionality)</li>
-              </ul>
             </div>
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-medium mb-2">2. Set up your database</h4>
-              <p className="text-sm text-muted-foreground mb-2">
-                Run database migrations:
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link href="/marketplace">Browse Marketplace</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8">
+                <Link href="/dashboard">Access Dashboard</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Why Choose HCTS?</h2>
+              <p className="text-xl text-muted-foreground">
+                A comprehensive platform designed specifically for healthcare trading
               </p>
-              <div className="space-y-2">
-                <code className="text-sm bg-muted p-2 rounded block">
-                  npm run db:generate
-                </code>
-                <code className="text-sm bg-muted p-2 rounded block">
-                  npm run db:migrate
-                </code>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="p-8 border rounded-xl hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Shield className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Regulatory Compliant</h3>
+                <p className="text-muted-foreground">
+                  Built with healthcare regulations in mind, ensuring all transactions
+                  meet industry standards and compliance requirements.
+                </p>
+              </div>
+
+              <div className="p-8 border rounded-xl hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Verified Partners</h3>
+                <p className="text-muted-foreground">
+                  Connect with verified healthcare providers and pharmaceutical companies
+                  through our rigorous verification process.
+                </p>
+              </div>
+
+              <div className="p-8 border rounded-xl hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <BarChart3 className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Real-time Analytics</h3>
+                <p className="text-muted-foreground">
+                  Comprehensive analytics and reporting tools to track performance,
+                  compliance, and market trends in real-time.
+                </p>
+              </div>
+
+              <div className="p-8 border rounded-xl hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Heart className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Patient-Centric Focus</h3>
+                <p className="text-muted-foreground">
+                  Every feature designed to ensure patient safety and access to quality
+                  healthcare products and services.
+                </p>
+              </div>
+
+              <div className="p-8 border rounded-xl hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <TrendingUp className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Market Intelligence</h3>
+                <p className="text-muted-foreground">
+                  Advanced pricing calculators and market insights to help you make
+                  informed trading decisions.
+                </p>
+              </div>
+
+              <div className="p-8 border rounded-xl hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Stethoscope className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Specialized Tools</h3>
+                <p className="text-muted-foreground">
+                  Healthcare-specific calculators, compliance tools, and specialized
+                  features for medical supply chain management.
+                </p>
               </div>
             </div>
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-medium mb-2">3. Try the features</h4>
-              <div className="space-y-2">
-                {loading || !isAuthReady ? (
-                  <Button size="sm" className="w-full" disabled={true}>
-                    View Dashboard
-                  </Button>
-                ) : (
-                  <Button asChild size="sm" className="w-full">
-                    <Link href="/dashboard">View Dashboard</Link>
-                  </Button>
-                )}
-                {loading || !isAiReady ? (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full"
-                    disabled={true}
-                  >
-                    Try AI Chat
-                  </Button>
-                ) : (
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="w-full"
-                  >
-                    <Link href="/chat">Try AI Chat</Link>
-                  </Button>
-                )}
-              </div>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-medium mb-2">4. Start building</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                Customize the components, add your own pages, and build your
-                application on top of this solid foundation.
-              </p>
-              <StarterPromptModal />
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-primary/5 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-4xl font-bold">Ready to Transform Healthcare Trading?</h2>
+            <p className="text-xl text-muted-foreground">
+              Join the HCTS platform and connect with verified healthcare partners today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link href="/auth/register/company">Register Your Company</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8">
+                <Link href="/calculator">Try Calculator</Link>
+              </Button>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
