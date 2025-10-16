@@ -43,7 +43,7 @@ export function ServiceOffersDisplay({ onCartUpdate }: ServiceOffersDisplayProps
   const [offers, setOffers] = useState<ServiceOffer[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("name");
   const [sortOrder, setSortOrder] = useState("asc");
   const [selectedOffer, setSelectedOffer] = useState<ServiceOffer | null>(null);
@@ -156,7 +156,7 @@ export function ServiceOffersDisplay({ onCartUpdate }: ServiceOffersDisplayProps
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Categories</SelectItem>
+                <SelectItem value="all">All Categories</SelectItem>
                 <SelectItem value="cardiology">Cardiology</SelectItem>
                 <SelectItem value="neurology">Neurology</SelectItem>
                 <SelectItem value="orthopedics">Orthopedics</SelectItem>
@@ -164,11 +164,20 @@ export function ServiceOffersDisplay({ onCartUpdate }: ServiceOffersDisplayProps
             </Select>
             <Select value={sortBy} onValueChange={setSortBy}>
               <SelectTrigger className="w-32">
-                <SelectValue />
+                <SelectValue placeholder="Sort by" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="name">Name</SelectItem>
                 <SelectItem value="price">Price</SelectItem>
+              </SelectContent>
+            </Select>
+            <Select value={sortOrder} onValueChange={setSortOrder}>
+              <SelectTrigger className="w-32">
+                <SelectValue placeholder="Order" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="asc">Ascending</SelectItem>
+                <SelectItem value="desc">Descending</SelectItem>
               </SelectContent>
             </Select>
           </div>
